@@ -4,12 +4,17 @@
 
    ![image](https://github.com/user-attachments/assets/7acee981-d3f8-42d6-be49-153eeef8f793)
   
-  
-  
-6. This has 43 states data.
-7. The data was quite robust, I have drilled it down to include only close to 300 points per state.
+2. API's
 
-8. API's: Please wait for a few secs as this is a free service.
+Points: 
+
+GET https://akshatsingh-talkinglands.onrender.com/api/points
+
+
+
+6. This has 43 states data. The data was quite robust, I have drilled it down to include only close to 300 points per state.
+
+7. API's: Please wait for a few secs as this is a free service.
    Read All: https://akshatsingh-talkinglands.onrender.com/api/states
    Read: https://akshatsingh-talkinglands.onrender.com/api/states/Wisconsin
    
