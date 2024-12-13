@@ -1,4 +1,4 @@
-const Point = require("./models/Point");
+const Point = require("../models/Point");
 
 exports.getAllPoints = async (req, res) => {
   try {
