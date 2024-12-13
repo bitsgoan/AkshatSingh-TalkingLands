@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const pointController = require("../../../../backend/controllers/pointController");
+const pointController = require("./controllers/pointController");
 
 router.get("/", pointController.getAllPoints);
 router.post("/", pointController.createPoint);
