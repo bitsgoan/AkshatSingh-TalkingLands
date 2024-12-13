@@ -1,0 +1,258 @@
+# API Documentation
+
+## Base URL
+`http://localhost:3000`
+
+## Authentication
+Currently, no authentication is required for the API endpoints.
+
+## Endpoints
+
+### States API
+
+#### Get All States
+```
+GET /api/states
+```
+Returns a list of all states.
+
+**Response**
+- Status: 200 OK
+```json
+[
+  {
+    "name": "string",
+    ...other state properties
+  }
+]
+```
+
+#### Get State by Name
+```
+GET /api/states/:name
+```
+Returns a specific state by name.
+
+**Parameters**
+- `name` (path parameter): Name of the state
+
+**Response**
+- Status: 200 OK
+```json
+{
+  "name": "string",
+  ...other state properties
+}
+```
+- Status: 404 Not Found
+```json
+{
+  "error": "State not found"
+}
+```
+
+#### Create State
+```
+POST /api/states
+```
+Creates a new state.
+
+**Request Body**
+```json
+{
+  "name": "string",
+  ...other state properties
+}
+```
+
+**Response**
+- Status: 201 Created
+```json
+{
+  "name": "string",
+  ...other state properties
+}
+```
+
+#### Update State
+```
+PUT /api/states/:name
+```
+Updates an existing state.
+
+**Parameters**
+- `name` (path parameter): Name of the state
+
+**Request Body**
+```json
+{
+  "name": "string",
+  ...other state properties
+}
+```
+
+**Response**
+- Status: 200 OK
+```json
+{
+  "name": "string",
+  ...other state properties
+}
+```
+- Status: 404 Not Found
+```json
+{
+  "error": "State not found"
+}
+```
+
+### Points API
+
+#### Get All Points
+```
+GET /api/points
+```
+Returns a list of all points.
+
+**Response**
+- Status: 200 OK
+```json
+[
+  {
+    "name": "string",
+    "description": "string",
+    "eventTime": "date",
+    "price": "number",
+    "location": {
+      "type": "Point",
+      "coordinates": [longitude, latitude]
+    },
+    "address": "string"
+  }
+]
+```
+
+#### Create Point
+```
+POST /api/points
+```
+Creates a new point.
+
+**Request Body**
+```json
+{
+  "name": "string",
+  "description": "string",
+  "eventTime": "date",
+  "price": "number",
+  "longitude": "number",
+  "latitude": "number",
+  "address": "string"
+}
+```
+
+**Response**
+- Status: 201 Created
+```json
+{
+  "name": "string",
+  "description": "string",
+  "eventTime": "date",
+  "price": "number",
+  "location": {
+    "type": "Point",
+    "coordinates": [longitude, latitude]
+  },
+  "address": "string"
+}
+```
+
+#### Update Point
+```
+PUT /api/points/:id
+```
+Updates an existing point.
+
+**Parameters**
+- `id` (path parameter): Point ID
+
+**Request Body**
+```json
+{
+  "name": "string", // optional
+  "description": "string", // optional
+  "eventTime": "date", // optional
+  "price": "number", // optional
+  "longitude": "number", // optional
+  "latitude": "number", // optional
+  "address": "string" // optional
+}
+```
+
+**Response**
+- Status: 200 OK
+```json
+{
+  "name": "string",
+  "description": "string",
+  "eventTime": "date",
+  "price": "number",
+  "location": {
+    "type": "Point",
+    "coordinates": [longitude, latitude]
+  },
+  "address": "string"
+}
+```
+- Status: 404 Not Found
+```json
+{
+  "error": "Point not found"
+}
+```
+
+#### Find Points Within Radius
+```
+GET /api/points/within
+```
+Returns points within a specified radius of a location.
+
+**Query Parameters**
+- `longitude` (number): Center point longitude
+- `latitude` (number): Center point latitude
+- `radiusInMiles` (number): Search radius in miles
+
+**Response**
+- Status: 200 OK
+```json
+[
+  {
+    "name": "string",
+    "description": "string",
+    "eventTime": "date",
+    "price": "number",
+    "location": {
+      "type": "Point",
+      "coordinates": [longitude, latitude]
+    },
+    "address": "string"
+  }
+]
+```
+
+## Error Responses
+All endpoints may return the following errors:
+
+- Status: 400 Bad Request
+```json
+{
+  "error": "Error message describing the issue"
+}
+```
+
+- Status: 500 Internal Server Error
+```json
+{
+  "error": "Error message describing the issue"
+}
+```
