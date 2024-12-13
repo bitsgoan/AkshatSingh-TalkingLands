@@ -6,6 +6,7 @@ router.get("/", pointController.getAllPoints);
 router.post("/", pointController.createPoint);
 router.get("/within", pointController.findWithinRadius);
 router.put("/:id", pointController.updatePoint);
-router.delete("/:id", pointController.deletePoint);
+router.get("/id/:id", pointController.getPointById);
+router.get("/name/:name", pointController.getPointByName);
 
 module.exports = router;
