@@ -20,7 +20,7 @@ app.use(cors());
 connectDB();
 
 // Routes
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+// app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 app.use("/", HomeRoutes);
 app.use("/api/states", stateRoutes);
 app.use("/api/points/", pointRoutes);
