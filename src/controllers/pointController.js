@@ -1,4 +1,4 @@
-const Point = require("../../try2/us-spatial-api/src/models/Point");
+const Point = require("./models/Point");
 
 exports.getAllPoints = async (req, res) => {
   try {
