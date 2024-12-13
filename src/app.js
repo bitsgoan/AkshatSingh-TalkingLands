@@ -8,7 +8,7 @@ const HomeRoutes = require("./routes/HomeRoutes");
 const Point = require("./models/Point");
 
 const swaggerUi = require("swagger-ui-express");
-const { specs } = require("./swagger");
+const { specs } = require("./config/swagger");
 
 const app = express();
 
